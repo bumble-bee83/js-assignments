@@ -11,7 +11,7 @@
 
 /**
  * Parses a rfc2822 string date representation into date value
- * For rfc2822 date specification refer to : http://tools.ietf.org/html/rfc2822#page-14
+ * For rfc2822 date specification refer to : http://tools.ietf.org/ html/rfc2822#page-14
  *
  * @param {string} value
  * @return {date}
@@ -22,7 +22,7 @@
  *    'Sun, 17 May 1998 03:00:00 GMT+01' => Date()
  */
 function parseDataFromRfc2822(value) {
-   throw new Error('Not implemented');
+   return new Date(value);
 }
 
 /**
@@ -37,7 +37,7 @@ function parseDataFromRfc2822(value) {
  *    '2016-01-19T08:07:37Z' => Date()
  */
 function parseDataFromIso8601(value) {
-   throw new Error('Not implemented');
+    return new Date(value);
 }
 
 
@@ -54,11 +54,11 @@ function parseDataFromIso8601(value) {
  *    Date(2001,1,1)    => false
  *    Date(2012,1,1)    => true
  *    Date(2015,1,1)    => false
- */
+ */ 
 function isLeapYear(date) {
-   throw new Error('Not implemented');
+    let year = new Date(date).getFullYear();
+    return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
 }
-
 
 /**
  * Returns the string represention of the timespan between two dates.
@@ -76,7 +76,9 @@ function isLeapYear(date) {
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,15,20,10,453)   => "05:20:10.453"
  */
 function timeSpanToString(startDate, endDate) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
+    //let resultDate = new Date(endDate - startDate);
+   //return `${resultDate.getHours()}:${resultDate.getMinutes()}:${resultDate.getSeconds()}.${resultDate.getMilliseconds()}`;
 }
 
 
